@@ -1,0 +1,61 @@
+﻿<Window x:Class="Neptuno.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vistas="clr-namespace:Neptuno.WPF.Vistas"
+        xmlns:vm="clr-namespace:Neptuno.WPF.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
+        Title="Neptuno — Laboratorio 04 · WPF + ADO .NET"
+        Height="760" Width="1280"
+        MinHeight="620" MinWidth="1040"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource PincelFondo}">
+
+    <DockPanel>
+
+        <!-- Encabezado -->
+        <Border DockPanel.Dock="Top" Background="{StaticResource PincelPrimario}" Padding="18,12">
+            <StackPanel>
+                <TextBlock Text="Sistema Neptuno"
+                           Foreground="White" FontSize="19" FontWeight="Bold" />
+                <TextBlock Text="Laboratorio 04 — Mantenimientos y reportes con WPF + ADO .NET"
+                           Foreground="#C9D8EA" FontSize="12" Margin="0,2,0,0" />
+            </StackPanel>
+        </Border>
+
+        <!-- Pie -->
+        <Border DockPanel.Dock="Bottom" Background="White" BorderBrush="{StaticResource PincelBorde}"
+                BorderThickness="0,1,0,0" Padding="18,7">
+            <TextBlock Text="Acceso a datos mediante procedimientos almacenados · Base de datos: NeptunoDB"
+                       Style="{StaticResource TextoEstado}" />
+        </Border>
+
+        <!-- Pestañas -->
+        <TabControl Margin="12" Background="Transparent" BorderThickness="0" Padding="0,10,0,0">
+
+            <TabItem Header="Productos">
+                <vistas:ProductosView DataContext="{Binding Productos}" />
+            </TabItem>
+
+            <TabItem Header="Categorías">
+                <vistas:CategoriasView DataContext="{Binding Categorias}" />
+            </TabItem>
+
+            <TabItem Header="Proveedores">
+                <vistas:ProveedoresView DataContext="{Binding Proveedores}" />
+            </TabItem>
+
+            <TabItem Header="Pedidos">
+                <vistas:PedidosView DataContext="{Binding Pedidos}" />
+            </TabItem>
+
+            <TabItem Header="Reportes">
+                <vistas:ReportesView DataContext="{Binding Reportes}" />
+            </TabItem>
+
+        </TabControl>
+
+    </DockPanel>
+</Window>
