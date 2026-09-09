@@ -1,0 +1,18 @@
+# Compilados de .NET
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+
+# Visual Studio
+.vs/
+*.userprefs
+
+# Paquetes NuGet restaurados
+packages/
+*.nupkg
+
+# Respaldos
+*.bak
