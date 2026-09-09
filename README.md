@@ -246,3 +246,7 @@ Lab04/
 ├── Neptuno.Datos/
 └── Neptuno.WPF/
 ```
+
+Créditos:
+Santos Zuasnabar, Paulo Nicolas
+Macavilca Nolasco, Jhamile Jhersy
